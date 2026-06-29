@@ -27,7 +27,6 @@ class MicronautServerPlugin : JavaPlugin() {
         try {
             applicationContext = Micronaut.build()
                 .classLoader(classLoader)
-                .environments(Environment.TEST) // Костыль чтоб при ошибке запуска не вызывался System.exit()
                 .eagerInitSingletons(true)
                 .banner(false)
                 .overrideConfigLocations("file:server-config")
